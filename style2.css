@@ -1,0 +1,179 @@
+h3 {
+  color:blue;
+  background-color:tomato;
+  text align: left;
+  font-style: oblique;
+  font-family: serif;
+  border: 3px inset;
+
+}
+img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+
+}
+input[type=text] {
+  color:tomato;
+  width:10%;
+  padding: 5px 5px;
+  margin: 5px;
+  box:sizing: border-box;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align:right;
+}
+
+
+}
+.Div1 {
+  text-align:left;
+  color:black;
+  font-family:sans-serif;
+
+}
+.Div2 {
+  text-align:left;
+  color:black;
+  font-family:serif;
+}
+.Div3 {
+  text-align:left;
+  color:black;
+  font-family:serif;
+  font-size:150%;
+  font-style: oblique;
+
+}
+.Div4 {
+  color:blue;
+  background-color:tomato;
+  text-align:center;
+  font-style:italic;
+  font-family:monospace;
+  border: 3px solid;
+}
+.custom_size1  {
+  width:19%;
+  border:inset;
+
+}
+.custom_size2 {
+  width:8%;
+  border:inset;
+}
+.custom_size3 {
+  width:18%;
+  border:inset;
+}
+.custom_size4 {
+  width:15%;
+  border:inset;
+}
+.custom_size5 {
+  width:9%;
+  border:inset;
+}
+.custom_size6 {
+  width:15%
+
+}
+.custom_size7 {
+  width:11%;
+}
+.custom_size8 {
+  width:9%
+}
+.custom_size9 {
+  width:11%;
+  border:inset;
+}
+
+.custom_size10 {
+  width:10%;
+  border:inset;
+}
+
+a:link {
+  color:gray;
+}
+a:visited {
+  color:tomato;
+}
+a:hover {
+  color:orange;
+}
+ul {
+  list-style-type:square;
+
+}
+#para1 {
+  color:black;
+  font-style:normal;
+  font-family: "Monaco",monospace;
+
+}
+
+#para2 {
+  color:black;
+  font-style:normal;
+  font-family: "Monaco",monospace;
+  font-size:95%;
+}
+#para3 {
+  color:black;
+  font-style:normal;
+  font-family: "Copperplate",fantasy;
+  font-size:80%
+}
+
+#para4 {
+  color:black;
+  font-style:normal;
+  font-family:"Georgia",serif;
+  font-size: 120%;
+}
+.red-background {
+  background-color:tomato;
+}
+.black-background {
+  background-color:black;
+}
+.box_table>table {
+  color:black;
+  border-width:2px;
+  border-style:solid;
+  border-color:blue;
+  border-collapse:collapse;
+  width:20%
+}
+.box_table>table th, .box_table>table td {
+  border: 1px solid blue;
+  padding: 5px;
+  text-align:center;
+}
+.box_table>table th {
+  background-color:tomato;
+}
+.box_table>table tr:hover {
+  background-color:tomato;
+}
+@media print {
+  .screen_only {
+    display:none;
+  }
+  @media (max-width:769px) {
+    body {
+      background-color:blue;
+    }
+  }
+  @media (min-width:649px) and (max-width:768px) {
+    body {
+      background-color:black;
+    }
+  }
+}
+}
