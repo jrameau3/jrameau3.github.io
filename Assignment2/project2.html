@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "list.css">
+<script src = "list.js"> </script>
+<title>Task List</title>
+</head>
+<body>
+<h1>Task List</h1>
+<img src = "https://marlacummins.com/wp-content/uploads/2018/10/to-do-list.jpg"/>
+<form id = "newt">New Task
+<input class = "tname" id = "tname" autocomplete="off" autofocus placeholder="Enter Task" type = "text">
+<br>
+<label for = "tpriority">Priority</label>
+<select name = "tpriority" id = "tpriority">
+<option value="low">low</option>
+<option value="medium">medium</option>
+<option value="high">high</option>
+</select>
+
+<label for = "tstatus">Status</label>
+<input class = "tstatus" name = "tstatus" type = "radio" value = "pending"> Pending
+<input class = "tstatus" name = "tstatus" type = "radio" value = "completed"> Completed
+<br>
+<input id = "submit" type = "submit">
+</form>
+<ul id = "tlist">
+</ul>
+</body>
+</html>

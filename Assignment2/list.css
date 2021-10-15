@@ -1,0 +1,20 @@
+body {
+text-align: center;
+background-color: white;
+}
+img {
+height: 230px;
+width: 230px;
+}
+li{
+border: 1px black solid;
+list-style-type:square;
+}
+h1 {
+  color:white;
+  background-color:black;
+  text-align:center;
+  font-style:italic;
+  font-family:monospace;
+  border: 2px solid;
+}
