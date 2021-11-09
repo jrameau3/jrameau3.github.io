@@ -1,0 +1,158 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+       <script src="quiz.js"></script>
+       <title>QuizApp</title>
+
+    </head>
+
+<body>
+        <div id="title">
+            <nav id="heading">
+              <div class="container">
+                <h1 class="style1" id="headerText">Jeff's Java/JavaScript Quiz</h1>
+              </div>
+            </nav>
+            <div id="clock">
+              <span class="style1">Time:</span><br>
+              <span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+          </div>
+          <div id="widget_view" style="margin:30px">
+
+          </div>
+    </body>
+    <script id="intro_view" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                <div>
+                  <span class="style1" id="introPrompt">Enter your name, then choose a quiz to take!</span><br>
+                  <input type="text" id="userName" name="fname" placeholder="Enter Name"><br>
+                  <div class="quizButtonsContainer">
+                    <button class="btn btn-danger text-white  " data-action="{{this.action}}">JavaScript Quiz</button>
+                    <button class="btn btn-danger text-white  " data-action="{{this.action2}}">Java Quiz</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </script>
+
+    <script id="question_view_multiple_choice" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="scoreRow">
+            <div class="col">
+                <p>Questions Answered: <span id="questionsAnswered"></span> || Current Score: <span id="currentScore"></span>%</p>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                <div>
+                  <span class="style1" style="text-align:center">{{this.questionText}}</span><br>
+                  <div class="answers">
+                    <input type="radio" id="{{this.options.[0]}}" data-action="answer" data-answer="{{this.options.[0]}}" value="{{this.options.[0]}}" name="choice">{{this.options.[0]}}<br>
+                    <input type="radio" id="{{this.options.[1]}}" data-action="answer" data-answer="{{this.options.[1]}}" value="{{this.options.[1]}}" name="choice">{{this.options.[1]}}<br>
+                    <input type="radio" id="{{this.options.[2]}}" data-action="answer" data-answer="{{this.options.[2]}}" value="{{this.options.[2]}}" name="choice">{{this.options.[2]}}<br>
+                    <input type="radio" id="{{this.options.[3]}}" data-action="answer" data-answer="{{this.options.[3]}}" value="{{this.options.[3]}}" name="choice">{{this.options.[3]}}<br>
+                  </div>
+                  <button class="btn btn-danger text-white float-right" data-action="submit">Enter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+
+    <script id="question_view_true_false" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="scoreRow">
+            <div class="col">
+              <p>Questions Answered: <span id="questionsAnswered"></span> || Current Score: <span id="currentScore"></span>%</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div>
+                <span class="toBold" style="text-align:center">{{this.questionText}}</span><br>
+                <div id="tfBtns">
+                  <input type="radio" id="{{this.options.[0]}}" data-action="answer" data-answer="{{this.options.[0]}}" value="{{this.options.[0]}}" name="choice">{{this.options.[0]}}<br>
+                <input type="radio" id="{{this.options.[1]}}" data-action="answer" data-answer="{{this.options.[1]}}" value="{{this.options.[1]}}" name="choice">{{this.options.[1]}}<br>
+                </div>
+                <button class="btn btn-danger text-white float-right" data-action="submit">Enter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+
+    <script id="question_view_text_input" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="scoreRow">
+            <div class="col">
+              <p>Questions Answered: <span id="questionsAnswered"></span> || Current Score: <span id="currentScore"></span>%</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div>
+                <span class="thick" style="text-align:center">{{this.questionText}}</span><br><br>
+                <input type="text" id="{{this.answerFieldId}}" name="answer"><br><br>
+                <button class="btn btn-danger text-white float-right" data-action="submit">Enter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+
+
+
+
+
+    <script id="end_view" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div>
+                <span class= "style1" id=endMessage></span><br>
+                <div class="quizButtonsContainer">
+                  <button class="btn btn-danger text-white float-right " data-action="home_page">Return to Home</button>
+                  <button class="btn btn-danger text-white float-right " data-action="retake">Retake the quiz</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+
+    <script id="correct_feedback_view" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                <div>
+                  <span class="thick" id="feedback_string">Correct </span>
+                  <button id="okBtn" onclick="nextQuestion()" class="btn btn-danger text-white float-right">Next question</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </script>
+
+    <script id="incorrect_feedback_view" type="text/x-handlebars-template">
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                <div>
+                  <span class="style1" id="feedback_string">Incorrect</span>
+                  <button id="okBtn" onclick="nextQuestion()" class="btn btn-danger text-white float-right">Next question</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </script>

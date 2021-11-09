@@ -1,0 +1,73 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+button{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.style1{
+  font-weight: bold;
+}
+#widget_view{
+    text-align: center;
+    padding: 20px;
+    border-radius: 6pt;
+    background-color: white;
+    min-height: 300px;
+    font-family: sans-serif;
+    font-size: 14pt;
+    align-items: center;
+    border-color:  black;
+    border-width: 15px;
+
+  }
+  #heading{
+
+    margin-top: 50px;
+    border-radius: 8pt;
+    text-align: center ;
+    background-color: red;
+    color: black;
+    min-width: 50%;
+    border:  black;
+    border-width: 10px;
+  }
+
+  #headerText{
+    margin-top:25px;
+    margin-bottom:25px;
+    border:  black;
+    border-width: 10px;
+  }
+
+
+  #title{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex-wrap:flex;
+    max-height:60%;
+    min-width:60%;
+  }
+#clock{
+    margin-top: 50px;
+    border-radius: 6pt;
+    font-family:  sans-serif;
+    max-width: 120px;
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+    min-width: 10%;
+    border: 3px black solid;
+
+  }
+
+  .answers{
+    text-align: left;
+    margin-top:10px;
+    margin-left:20%;
+  }
